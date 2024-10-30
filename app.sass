@@ -1,0 +1,52 @@
+$color_light: #F5F5F5
+$color_dark: #021424
+$color_main: #004494
+$color_secondary: #FFD617
+
+body
+  width: 100%
+  font-size: 16px
+  font-family: Arial
+.section
+  display: flex
+  flex-direction: column
+  align-items: center
+  position: relative
+  min-height: 100vh
+  &--light
+    background: $color_light
+  &--dark
+    background: $color_dark
+
+.title
+  font-size: 3rem
+  margin-bottom: 1.5rem
+  &--blue
+    color: $color_main
+  &--yellow
+    color: $color_secondary
+
+.phone
+  max-height: 80vh
+  overflow: hidden
+  &__outline
+    height: 100%
+    max-height: 100%
+
+.spy
+  position: absolute
+  top: 50%
+  transform: translateY(-50%)
+  &--aware
+    right: 6%
+  &--unaware
+    left: 6%
+
+    
+@media screen and (min-width: 800px)
+  main
+    width: 100%
+    display: flex
+
+  .section
+    width: 50%
