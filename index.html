@@ -51,6 +51,12 @@
     <script src="main.js" defer></script>
 </head>
 <body>
+    <template id="message_template">
+        <span class="message">
+            Hi! I'm using WhatsApp
+        </span>
+    </template>
+
     <main>
         <section class="section section--light">
             <h1 class="title title--blue">EU Chatkontrolle</h1>
@@ -70,15 +76,18 @@
                             <img class="chat__profilepic" src="profile_pic.png">
                             <span class="chat__username">Sarah</span>
                         </div>
-                        <div class="chat__messages">
+                        <div class="chat__messages" id="c_container">
                             <span class="message">
-                                Hi! I'm using WhatsApp
+                                hey na. wie fandest du den Film gestern?
                             </span>
                             <span class="message message--outgoing">
-                                Bli bla blu that's really nice, isn't it? I can send you messages all the time!
+                                bombe! die explosion am Ende war aber etwas viel...
+                            </span>
+                            <span class="message">
+                                ja, fands auch eher okee. wenigstens hat popcorn schmuggeln gut geklappt ;)
                             </span>
                         </div>
-                        <input class="chat__input" placeholder="Nachricht eingeben"/>
+                        <input class="chat__input" id="c_input" placeholder="Nachricht eingeben"/>
                     </div>
                 </div>
                 <img class="phone__outline" src="iphone15_pro_outline.png">
@@ -86,7 +95,7 @@
             <img class="spy spy--aware" src="spy_aware.svg">
         </section>
         <section class="section section--dark">
-            <h1 class="title title--yellow">unberechtigt</h1>
+            <h1 class="title title--yellow">berechtigt?</h1>
             <div class="phone">
                 <div class="phone__content"></div>
                 <img class="phone__outline" src="iphone15_pro_outline.png">
