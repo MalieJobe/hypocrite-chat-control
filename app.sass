@@ -45,11 +45,50 @@ body
     background-color: #fff
     z-index: 2
     overflow: hidden
+
+    svg
+      z-index: 2
     
   &__outline
     height: 100%
     max-height: 100%
     position: relative
+
+.ig
+  height: 92%
+  flex-direction: column
+  position: relative
+  &__header
+    z-index: 2
+    position: relative
+  &__posts
+    position: relative
+    z-index: 1
+    animation-name: scroll
+    animation-duration: 10s
+    animation-iteration-count: infinite
+    animation-direction: alternate
+    animation-timing-function: ease-in-out
+  &__footer
+    z-index: 2
+    position: absolute
+    bottom: 0
+
+@keyframes scroll
+  from
+    transform: translateY(0)
+  to
+    transform: translateY(calc(-100% + 400px))
+
+.post
+  height: 358px
+  width: 100%
+  background-image: url("post_layout.png")
+  background-size: contain
+  background-repeat: no-repeat
+  img
+    padding-top: 40px
+    
 
 .chat
   height: 100%
