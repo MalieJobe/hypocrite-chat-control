@@ -66,7 +66,7 @@ function scanMessage(messageNode) {
                 }, ++animPosition * animDelayMs); // Delay for each character
             });
     
-            const cleanWord = word.textContent.trim().split("").filter(c=>alphabet.includes(c)).join("")
+            const cleanWord = word.textContent.trim().toLowerCase().split("").filter(c=>alphabet.includes(c)).join("")
     
             if (flaggedWords.includes(cleanWord)) {
                 setTimeout(()=>highlightWord(word), animPosition * animDelayMs);

@@ -34,34 +34,30 @@ body
   position: relative
   &__content
     position: absolute
-    top: 0.65rem // because bezels
-    left: 0.72rem
-    width: calc(100% - 1.44rem)
-    height: calc(100% - 1.25rem)
-    max-height: calc(100% - 1.25rem)
+    top: 75px // because bezels
+    left: 11.5px
+    width: calc(100% - 23px)
+    height: calc(100% - 102px)
+    max-height: calc(100% - 102px)
     display: flex
     flex-direction: column
-    border-radius: 31px
     background-color: #fff
     z-index: 2
     overflow: hidden
+    border-radius: 0 0 15px 15px
+    border-top: 1px solid #c3c3c3
 
-    svg
-      z-index: 2
+    &--insta
+      height: calc(100% - 131px)
+      max-height: calc(100% - 131px)
+      border-radius: 0
     
   &__outline
     height: 100%
     max-height: 100%
     position: relative
 
-.ig
-  height: 92%
-  flex-direction: column
-  position: relative
-  &__header
-    z-index: 2
-    position: relative
-  &__posts
+.ig__posts
     position: relative
     z-index: 1
     animation-name: scroll
@@ -69,10 +65,6 @@ body
     animation-iteration-count: infinite
     animation-direction: alternate
     animation-timing-function: ease-in-out
-  &__footer
-    z-index: 2
-    position: absolute
-    bottom: 0
 
 @keyframes scroll
   from
@@ -93,19 +85,6 @@ body
 .chat
   height: 100%
   background-color: #eae7df
-  &__nav
-    width: 100%
-    height: 35px
-    background-color: #018069
-    display: flex
-    align-items: center
-    gap: 10px
-    padding-left: 10px
-  &__profilepic
-    height: 70%
-  &__username
-    color: #fff
-    font-weight: bold
 
   &__input
     height: 30px
@@ -121,7 +100,8 @@ body
   &__messages
     display: flex
     flex-direction: column
-    height: calc(100% - 80px)
+    justify-content: flex-end
+    height: calc(100% - 40px)
     max-height: 100%
     padding: 7px
     gap: 5px
@@ -166,10 +146,19 @@ x-c
   position: absolute
   top: 50%
   transform: translateY(-50%)
+  max-width: 11%
   &--aware
     right: 6%
   &--unaware
     left: 6%
+
+
+footer
+  max-width: 650px
+  margin: 40px auto
+  padding: 0 10px
+  font: 18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+  color: #444
 
     
 @media screen and (min-width: 800px)
