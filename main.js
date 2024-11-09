@@ -3,21 +3,6 @@ const CHAT_CONTAINER = document.getElementById('c_container');
 const MSG_TEMPLATE = document.getElementById('message_template');
 const alphabet = [...'abcdefghijklmnopqrstuvwxyz'];
 
-const INTRO_DIALOG = document.getElementById('intro');
-const INTRO_CLOSE_BTN = document.getElementById('closeDialog');
-
-if(!localStorage.getItem("sawDialog")) {
-    INTRO_DIALOG.showModal();
-    document.body.style.position = "fixed"
-}
-
-INTRO_CLOSE_BTN.addEventListener('click', ()=> {
-    INTRO_DIALOG.close();
-    document.body.style.position = "inherit"
-    localStorage.setItem("sawDialog", 1);
-})
-
-
 let scanningQueue = []; // Queue to process messages one at a time
 
 
@@ -124,13 +109,27 @@ const flaggedWords = [
     "nachrichtendienst", "verdeckter", "intelligenzoperation", "staatsfeind", "feindlich", 
     "gegenregierung", "staatsgeheimnis", "umsturz", "aufwiegelung", "aufsicht", "übergriff", 
     "opfer", "machtkampf", "entgleisung", "flucht", "asyl", "grenzüberschreitung", 
-    "illegaler", "unsichere-handel", "verstörung", "schießerei", "angriff", "freizeitwaffe", 
+    "illegaler", "verstörung", "schießerei", "angriff", "freizeitwaffe", 
     "illegaler-handel", "hochverrat", "verschwörung", "extremismus", "kriegsführung", 
     "missbrauch", "illegalität", "kinderpornographie", "pornografie", "sklavenhandel", 
     "heirat", "treuebruch", "lüge", "partei", "national", "staatsfeindlich", "demokratiefeindlich",
     "demo", "demonstration", "schmuggeln"
 ];
 
-
 scanningQueue = [... document.querySelectorAll('.message:not(.message--scanned)')] 
 processQueue();
+
+
+const INTRO_DIALOG = document.getElementById('intro');
+const INTRO_CLOSE_BTN = document.getElementById('closeDialog');
+
+if(!localStorage.getItem("sawDialog")) {
+    INTRO_DIALOG.showModal();
+    document.body.style.position = "fixed"
+}
+
+INTRO_CLOSE_BTN.addEventListener('click', ()=> {
+    INTRO_DIALOG.close();
+    document.body.style.position = "inherit"
+    localStorage.setItem("sawDialog", 1);
+})
