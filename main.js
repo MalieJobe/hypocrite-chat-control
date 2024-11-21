@@ -66,7 +66,7 @@ function scanMessage(messageNode) {
                 }, ++animPosition * animDelayMs); // Delay for each character
             });
     
-            const cleanWord = word.textContent.trim().toLowerCase().split("").filter(c=>alphabet.includes(c)).join("")
+            const cleanWord = word.textContent.trim().toLowerCase().split("").filter(c => /[a-zäöüß]/.test(c)).join("");
     
             if (flaggedWords.includes(cleanWord)) {
                 setTimeout(()=>highlightWord(word), animPosition * animDelayMs);
@@ -113,7 +113,7 @@ const flaggedWords = [
     "illegaler-handel", "hochverrat", "verschwörung", "extremismus", "kriegsführung", 
     "missbrauch", "illegalität", "kinderpornographie", "pornografie", "sklavenhandel", 
     "heirat", "treuebruch", "lüge", "partei", "national", "staatsfeindlich", "demokratiefeindlich",
-    "demo", "demonstration", "schmuggeln"
+    "demo", "demonstration", "schmuggeln", "töten"
 ];
 
 scanningQueue = [... document.querySelectorAll('.message:not(.message--scanned)')] 
