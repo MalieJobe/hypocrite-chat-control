@@ -1,0 +1,241 @@
+body {
+  width: 100%;
+  font-size: 16px;
+  font-family: Arial;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100vh;
+}
+.section--light {
+  background: #F5F5F5;
+}
+.section--dark {
+  background: #021424;
+}
+
+ol > li::marker {
+  font-weight: bold;
+}
+
+iframe {
+  display: block;
+  margin: 1rem auto;
+  width: 100%;
+  max-width: 570px;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+.title--blue {
+  color: #004494;
+}
+.title--yellow {
+  color: #FFD617;
+}
+
+.phone {
+  height: 32rem;
+  max-height: 80vh;
+  overflow: hidden;
+  position: relative;
+}
+.phone__content {
+  position: absolute;
+  top: 75px;
+  left: 11.5px;
+  width: calc(100% - 23px);
+  height: calc(100% - 102px);
+  max-height: calc(100% - 102px);
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  z-index: 2;
+  overflow: hidden;
+  border-radius: 0 0 15px 15px;
+  border-top: 1px solid #c3c3c3;
+}
+.phone__content--insta {
+  height: calc(100% - 131px);
+  max-height: calc(100% - 131px);
+  border-radius: 0;
+}
+.phone__outline {
+  height: 100%;
+  max-height: 100%;
+  position: relative;
+}
+
+.ig__posts {
+  position: relative;
+  z-index: 1;
+  animation-name: scroll;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% + 400px));
+  }
+}
+.post {
+  height: 358px;
+  width: 100%;
+  background-image: url("post_layout.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.post img {
+  padding-top: 40px;
+}
+
+.chat {
+  height: 100%;
+  background-color: #eae7df;
+}
+.chat__input {
+  height: 30px;
+  width: calc(100% - 10px);
+  margin: auto 5px;
+  padding: 0 10px;
+  outline: none;
+  font-size: 0.75rem;
+  border: none;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.231372549);
+  border-radius: 20px;
+}
+.chat__messages {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: calc(100% - 40px);
+  max-height: 100%;
+  padding: 7px;
+  gap: 5px;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.chat__messages::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.message {
+  display: block;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  background: #fff;
+  border-radius: 5px;
+  max-width: 85%;
+  padding: 5px;
+}
+.message--outgoing {
+  background: #e7ffdb;
+  margin-left: auto;
+}
+
+x-w {
+  display: inline-block;
+}
+
+x-c {
+  display: inline-block;
+  transition-duration: 200ms;
+  transition-property: color, transform;
+}
+
+.highlight {
+  color: red;
+  transform: translateY(-4px);
+}
+
+.permanent-highlight {
+  text-decoration: underline;
+  text-decoration-color: red;
+  color: red;
+}
+
+.spy {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 11%;
+}
+.spy--aware {
+  right: 6%;
+}
+.spy--unaware {
+  left: 6%;
+}
+
+footer {
+  max-width: 760px;
+  margin: 40px auto;
+  padding: 0 10px;
+  font: 18px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  color: #444;
+}
+
+.intro[open] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  max-width: 500px;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: flex-start;
+}
+.intro[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.5647058824);
+}
+
+.intro__header {
+  font-weight: bold;
+}
+.intro__body {
+  color: #3f3f3f;
+}
+.intro__button {
+  background-color: #fff;
+  color: #3f3f3f;
+  border: 1px solid #3f3f3f;
+  border-radius: 5px;
+  padding: 4px 12px;
+  outline: none;
+  cursor: pointer;
+}
+.intro__button:hover {
+  background-color: #3f3f3f;
+  color: #fff;
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    width: 100%;
+    display: flex;
+  }
+  .section {
+    width: 50%;
+  }
+}/*# sourceMappingURL=app.css.map */
